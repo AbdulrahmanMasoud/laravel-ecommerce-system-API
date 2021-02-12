@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->decimal('price');
             $table->decimal('discount')->nullable();
+            $table->string('slug')->unique();
             $table->enum('stock',['instock','outofstock']);
             $table->unsignedBigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

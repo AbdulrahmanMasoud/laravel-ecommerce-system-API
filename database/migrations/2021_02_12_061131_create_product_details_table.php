@@ -18,7 +18,7 @@ class CreateProductDetailsTable extends Migration
             $table->unsignedBigInteger('product_id')->unsigned();
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->string('color');
-            $table->string('size');
+            $table->string('size')->nullable();
             $table->unsignedInteger('quantity');
             $table->timestamps();
         });
